@@ -6,6 +6,9 @@ import java.time.LocalDateTime;
 
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -20,6 +23,7 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @Builder
+@Entity
 public class Movimentacao {
     
     @AllArgsConstructor
@@ -31,6 +35,7 @@ public class Movimentacao {
         private long idUsuario;
     }
 
+    @Id
     @EmbeddedId
     private MovimentacaoId movimentacaoId;
 
@@ -40,7 +45,9 @@ public class Movimentacao {
 
     private BigDecimal periodo;
 
+    @ManyToOne
     private Ocorrencia ocorrencia;
-
+    
+    @ManyToOne
     private Calendario calendario;
 }

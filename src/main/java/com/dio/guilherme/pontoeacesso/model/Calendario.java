@@ -2,6 +2,8 @@ package com.dio.guilherme.pontoeacesso.model;
 
 import java.time.LocalDateTime;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
@@ -17,8 +19,10 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @Builder
+@Entity
 public class Calendario {
     
+    @Id
     private long id;
 
     @ManyToOne

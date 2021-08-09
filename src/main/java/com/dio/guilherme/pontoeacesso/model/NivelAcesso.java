@@ -1,5 +1,8 @@
 package com.dio.guilherme.pontoeacesso.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.EqualsAndHashCode;
@@ -13,8 +16,10 @@ import lombok.Setter;
 @Setter
 @EqualsAndHashCode
 @Builder
+@Entity
 public class NivelAcesso {
     
+    @Id
     private long id;
 
     private String descricao;
