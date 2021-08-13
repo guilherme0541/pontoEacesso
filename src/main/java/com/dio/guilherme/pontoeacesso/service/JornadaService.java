@@ -1,7 +1,7 @@
 package com.dio.guilherme.pontoeacesso.service;
 
 import java.util.List;
-import com.dio.guilherme.pontoeacesso.exception.NotFoundException;
+import com.dio.guilherme.pontoeacesso.exception.CustomException;
 import com.dio.guilherme.pontoeacesso.model.JornadaTrabalho;
 import com.dio.guilherme.pontoeacesso.repository.JornadaRepository;
 
@@ -41,6 +41,6 @@ public class JornadaService {
 
     private JornadaTrabalho jornadaExists(Long id) throws Exception {
         return jornadaRepository.findById(id)
-                .orElseThrow(() -> new NotFoundException("Jornada", id));
+                .orElseThrow(() -> new CustomException("Jornada", id));
     }
 }
