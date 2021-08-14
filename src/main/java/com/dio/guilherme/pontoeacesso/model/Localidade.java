@@ -21,6 +21,7 @@ import lombok.Setter;
 public class Localidade {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne

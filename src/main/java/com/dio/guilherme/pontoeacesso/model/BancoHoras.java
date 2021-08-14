@@ -30,6 +30,8 @@ public class BancoHoras {
     @EqualsAndHashCode
     @Embeddable
     public class BancoHorasId implements Serializable{
+
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long idBancoHoras;
         private long idMovimento;
         private long idUsuario;

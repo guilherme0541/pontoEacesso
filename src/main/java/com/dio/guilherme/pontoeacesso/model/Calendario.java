@@ -23,6 +23,7 @@ import lombok.Setter;
 public class Calendario {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @ManyToOne

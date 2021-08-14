@@ -31,6 +31,8 @@ public class Movimentacao {
     @EqualsAndHashCode
     @Embeddable
     public class MovimentacaoId implements Serializable{
+        
+        @GeneratedValue(strategy = GenerationType.IDENTITY)
         private long idMovimento;
         private long idUsuario;
     }

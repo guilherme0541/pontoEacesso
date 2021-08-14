@@ -20,6 +20,7 @@ import lombok.Setter;
 public class TipoData {
     
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     
     private String descricao;
