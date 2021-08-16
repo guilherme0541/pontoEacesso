@@ -7,6 +7,8 @@ import java.time.LocalDateTime;
 import javax.persistence.Embeddable;
 import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 
@@ -32,12 +34,12 @@ public class Movimentacao {
     @Embeddable
     public class MovimentacaoId implements Serializable{
         
-        @GeneratedValue(strategy = GenerationType.IDENTITY)
+        
         private long idMovimento;
         private long idUsuario;
     }
 
-    @Id
+    
     @EmbeddedId
     private MovimentacaoId movimentacaoId;
 
