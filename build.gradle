@@ -31,9 +31,9 @@ dependencies {
 	runtimeOnly 'mysql:mysql-connector-java'
 	implementation 'com.h2database:h2'
 
-	compileOnly group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
-    compileOnly group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
-    compileOnly group: 'io.springfox', name: 'springfox-bean-validators', version: '2.9.2'
+	compileOnly group: 'io.springfox', name: 'springfox-boot-starter', version: '3.0.0'
+    compileOnly group: 'io.springfox', name: 'springfox-swagger-ui', version: '3.0.0'
+    compileOnly group: 'io.springfox', name: 'springfox-bean-validators', version: '3.0.0'
 
 	compileOnly group: 'org.hibernate', name: 'hibernate-envers', version: '5.4.17.Final'
     compileOnly group: 'org.hibernate', name: 'hibernate-validator', version: '6.1.5.Final'
