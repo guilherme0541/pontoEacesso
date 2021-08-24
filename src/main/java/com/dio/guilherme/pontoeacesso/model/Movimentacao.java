@@ -51,6 +51,8 @@ public class Movimentacao {
     @AllArgsConstructor
     @NoArgsConstructor
     @EqualsAndHashCode
+    @Getter
+    @Setter
     public class MovimentacaoId implements Serializable{
         
         
