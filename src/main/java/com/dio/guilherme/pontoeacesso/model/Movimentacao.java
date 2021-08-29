@@ -1,6 +1,5 @@
 package com.dio.guilherme.pontoeacesso.model;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -24,16 +23,15 @@ import lombok.Setter;
 @EqualsAndHashCode
 @Builder
 @Entity
-@IdClass(MovimentacaoId.class)
 public class Movimentacao {
     
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idMovimento;
+    private long id;
 
-    @Id
-    private long idUsuario;
+    @ManyToOne
+    private Usuario usuario;
 
     private LocalDateTime dataEntrada;
 
@@ -46,16 +44,6 @@ public class Movimentacao {
     
     @ManyToOne
     private Calendario calendario;
-}
 
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @EqualsAndHashCode
-    @Getter
-    @Setter
-    public class MovimentacaoId implements Serializable{
-        
-        
-        private long idMovimento;
-        private long idUsuario;
-    }
+   
+}

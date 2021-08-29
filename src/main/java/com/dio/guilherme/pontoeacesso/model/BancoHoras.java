@@ -1,6 +1,5 @@
 package com.dio.guilherme.pontoeacesso.model;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
@@ -8,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -23,33 +23,21 @@ import lombok.Setter;
 @EqualsAndHashCode
 @Builder
 @Entity
-@IdClass(BancoHorasId.class)
 public class BancoHoras {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idBancoHoras;
+    private long id;
 
-    @Id
-    private long idMovimento;
+    @ManyToOne
+    private Movimentacao movimentacao;
 
-    @Id
-    private long idUsuario;
+    @ManyToOne
+    private Usuario usuario;
 
     private LocalDateTime dataTrabalhada;
 
     private BigDecimal quantidadeHorasTrabalhadas;
 
     private BigDecimal saldoHorasTrabalhadas;
-}
-
-@AllArgsConstructor
-@NoArgsConstructor
-@EqualsAndHashCode
-public class BancoHorasId implements Serializable{
-
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private long idBancoHoras;
-    private long idMovimento;
-    private long idUsuario;
 }
