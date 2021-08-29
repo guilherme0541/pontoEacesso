@@ -1,13 +1,13 @@
 package com.dio.guilherme.pontoeacesso.model;
 
-import java.io.Serializable;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
-import javax.persistence.Embeddable;
-import javax.persistence.EmbeddedId;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -25,19 +25,15 @@ import lombok.Setter;
 @Entity
 public class BancoHoras {
     
-    @AllArgsConstructor
-    @NoArgsConstructor
-    @EqualsAndHashCode
-    @Embeddable
-    public class BancoHorasId implements Serializable{
-        private long idBancoHoras;
-        private long idMovimento;
-        private long idUsuario;
-    }
-
     @Id
-    @EmbeddedId
-    private BancoHorasId bancoHorasId; 
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+
+    @ManyToOne
+    private Movimentacao movimentacao;
+
+    @ManyToOne
+    private Usuario usuario;
 
     private LocalDateTime dataTrabalhada;
 
